@@ -1,10 +1,6 @@
 import { NextResponse } from "next/server";
-import { useRouter } from 'next/navigation';
 
 export async function GET(req: Request, res: Response) {
-  const router = useRouter()
-  console.log(router)
-
   //console.log(username)
 
   const svgString = generateGraph(req);
