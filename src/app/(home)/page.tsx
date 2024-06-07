@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <div>
       <Image
-        src="http://localhost:3000/lucas7maciel/spread"
+        src="http:\\\\localhost:3000\\lucas7maciel\\spread"
         alt="Picona"
         width={50}
         height={60}
