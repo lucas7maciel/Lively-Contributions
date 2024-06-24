@@ -33,7 +33,15 @@ export const defaultConfig = {
   delay: 0,
 };
 
-export const animations = {
+// Animations props
+export type AnimationsValue = 'scale' | 'drop' | 'pacman'
+
+interface AnimationsProps {
+  animation: (weeks: any) => string;
+  contribution: (props: any) => string
+}
+
+export const animations: Record<AnimationsValue, AnimationsProps>  = {
   scale: {
     animation: scaleAnim,
     contribution: scaleCont,

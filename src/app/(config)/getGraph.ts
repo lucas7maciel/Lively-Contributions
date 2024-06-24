@@ -1,7 +1,7 @@
 // Config
 import { defaultConfig as cfg, bg, colors, animations } from "./themes";
 // Types
-import { AnimationProps } from "../../../models/animation.model";
+import { AnimationsValue } from "./themes";
 
 export function getGraph(weeks: any, config: any) {
   // Set animation props
@@ -9,19 +9,18 @@ export function getGraph(weeks: any, config: any) {
   let animation;
 
   // Ajeitar essa bagaceira
-  if (config.animation === "random") {
-    config.animation = ["pacman", "scale"][Math.floor(Math.random() * 2)];
+  if (config.animation === "random" || !config.animation) {
+    const anims = Object.keys(animations);
+    config.animation = anims[Math.floor(Math.random() * anims.length)];
   }
 
   // Ajeitar essa outra bagaceira
   animation =
-    animations[
-      (config.animation as "pacman" | "scale" | "drop" | undefined) || "scale"
-    ] || animations.pacman;
+    animations[config.animation as AnimationsValue] || animations.pacman;
 
   // Set themes
-  const color: string[] = colors[config.color] || colors.light;
   const bgColor: string = bg[config.bg] || config.bg || "";
+  const color: string[] = colors[config.color || config.bg] || colors.light;
 
   // Set info
   config.weeks = weeks.length;
