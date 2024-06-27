@@ -18,12 +18,12 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
+  /*background: linear-gradient(
       to bottom,
       transparent,
       rgb(var(--background-end-rgb))
     )
-    rgb(var(--background-start-rgb));
+    rgb(var(--background-start-rgb));*/
 }
 
 @layer utilities {
@@ -36,9 +36,9 @@ button,
 .button {
   color: white;
   font-weight: bold;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
 
-  padding: 0.5rem 1.5rem;
+  padding: 0.4rem 1.2rem;
 
   background-color: black;
   border-radius: 5rem;

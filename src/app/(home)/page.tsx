@@ -1,21 +1,36 @@
+// Components
 import Link from "next/link";
+import Image from "next/image";
+import ContributionsBg from "./contributionsBg";
+// Assets
+import DownIcon from "/public/icons/down.svg";
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen w-full flex items-center flex-col justify-center text-center">
-      <h1 className="font-bold text-4xl">Lively Contributions</h1>
-      <h2 className="mt-1 text-2xl">
-        Generate custom charts for your git contributions
+    <div className="relative pa-4 min-h-screen w-full flex items-center flex-col justify-center text-center overflow-hidden">
+      <h1 className="text-6xl">Lively</h1>
+      <h2 className="mt-2 text-2xl">
+        Your progress. <span className="font-bold">Your Way.</span>
       </h2>
 
-      <Link href="maker" className="button mt-5">
-        CREATE
-      </Link>
-      <Link href="docs" className="mt-2 font-bold cursor-pointer">
-        DOCS
-      </Link>
+      <div className="flex flex-col items-center justify-center gap-3 mt-5">
+        <Link href="maker" className="button w-[8.5rem]">
+          CREATE
+        </Link>
+        <Link href="docs" className="font-bold">
+          DOCS
+        </Link>
+      </div>
 
-      <p className="absolute bottom-4 left-[50%] translate-x-[-50%] font-extrabold text-center text-red-600">Under development</p>
+      {/* <ContributionsBg /> */}
+
+      <Image
+        className="absolute bottom-4 left-[50%] translate-x-[-50%] opacity-80 cursor-pointer"
+        src={DownIcon}
+        width={25}
+        height={25}
+        alt="Scroll down"
+      />
     </div>
   );
 }

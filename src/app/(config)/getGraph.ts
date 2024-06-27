@@ -54,7 +54,10 @@ export function getGraph(weeks: any, config: any) {
         width="700"
         height="102"
         viewBox="0 0 700 102"
-        style="background-color: ${bgColor};"
+        style="
+          background-color: ${bgColor};
+          border-radius: 4px;
+        "
         role="img"
         aria-labelledby="descId"
       >
