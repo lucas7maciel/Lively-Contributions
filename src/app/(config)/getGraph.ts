@@ -11,7 +11,7 @@ export function getGraph(weeks: any, config: any) {
   // Ajeitar essa bagaceira
   if (config.animation === "random" || !config.animation) {
     const anims = Object.keys(animations);
-    config.animation = anims[Math.floor(Math.random() * anims.length)];
+    config.animation = anims[Math.floor(Math.random() * (anims.length - 1))];
   }
 
   // Ajeitar essa outra bagaceira
