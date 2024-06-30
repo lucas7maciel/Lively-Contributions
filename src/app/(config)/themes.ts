@@ -1,3 +1,5 @@
+// Types
+import { AnimationsValue } from "@/models/animations.model";
 // Scale
 import { animation as scaleAnim } from "./(animations)/scale";
 import { contribution as scaleCont } from "./(contributions)/scale";
@@ -10,8 +12,8 @@ import { contribution as pacCont } from "./(contributions)/pacman";
 
 // Available pre defined colors, bg colors and other properties
 export const bg: Record<string, string> = {
-  dark: "#0d1117",
-  light: "#ffffff",
+  dark: "0d1117",
+  light: "ffffff",
 };
 
 export const colors: Record<string, string[]> = {
@@ -34,14 +36,12 @@ export const defaultConfig = {
 };
 
 // Animations props
-export type AnimationsValue = 'scale' | 'drop' | 'pacman'
-
 interface AnimationsProps {
   animation: (weeks: any) => string;
-  contribution: (props: any) => string
+  contribution: (props: any) => string;
 }
 
-export const animations: Record<AnimationsValue, AnimationsProps>  = {
+export const animations: Record<AnimationsValue, AnimationsProps> = {
   scale: {
     animation: scaleAnim,
     contribution: scaleCont,
@@ -53,5 +53,10 @@ export const animations: Record<AnimationsValue, AnimationsProps>  = {
   pacman: {
     animation: pacAnim,
     contribution: pacCont,
+  },
+  // Ajeitar
+  random: {
+    animation: () => "",
+    contribution: () => "",
   },
 };

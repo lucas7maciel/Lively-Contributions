@@ -1,0 +1,13 @@
+.react-colorful__hue.react-colorful__last-control {
+    height: 20px;
+}
+
+.react-colorful__pointer.react-colorful__hue-pointer {
+    height: 20px;
+    width: 20px;
+}
+
+.react-colorful__pointer.react-colorful__saturation-pointer {
+    width: 15px;
+    height: 15px;
+}

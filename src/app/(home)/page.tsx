@@ -24,13 +24,13 @@ export default function Home() {
 
       {/* <ContributionsBg /> */}
 
-      <Image
+      {/* <Image
         className="absolute bottom-4 left-[50%] translate-x-[-50%] opacity-80 cursor-pointer"
         src={DownIcon}
         width={25}
         height={25}
         alt="Scroll down"
-      />
+      /> */}
     </div>
   );
 }

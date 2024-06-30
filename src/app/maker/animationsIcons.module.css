@@ -1,0 +1,76 @@
+/* Scale */
+.scale {
+  transform-origin: center center;
+  animation: scale-anim 4s infinite;
+  fill: red;
+}
+
+@keyframes scale-anim {
+  0% {
+    transform: scale(0.2);
+  }
+
+  10% {
+    transform: scale(1);
+  }
+
+  80%,
+  100% {
+    transform: scale(0.2);
+  }
+}
+
+/* Drop */
+.drop {
+  fill: green;
+  animation: drop 1.25s infinite;
+  transform-origin: 5px 5px;
+}
+
+@keyframes drop {
+  0% {
+    scale: 0;
+  }
+
+  10% {
+    scale: 1;
+  }
+
+  40% {
+    transform: translateY(0);
+  }
+
+  99% {
+    transform: translateY(17px);
+    scale: 1;
+  }
+
+  100% {
+    transform: translateY(0px);
+    scale: 0;
+  }
+
+  
+}
+
+/* Pacman */
+.pacman {
+  stroke: yellow;
+  stroke-dasharray: 18.9, 15;
+  stroke-dashoffset: -2.25;
+  stroke-width: 7.5;
+
+  fill: none;
+  animation: chomp 0.4s infinite alternate;
+}
+
+@keyframes chomp {
+  from {
+    stroke-dasharray: 23.55, 15;
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dasharray: 18.9, 15;
+    stroke-dashoffset: -2.25;
+  }
+}

@@ -1,7 +1,7 @@
 // Config
 import { defaultConfig as cfg, bg, colors, animations } from "./themes";
 // Types
-import { AnimationsValue } from "./themes";
+import { AnimationsValue } from "@/models/animations.model";
 
 export function getGraph(weeks: any, config: any) {
   // Set animation props
@@ -54,13 +54,16 @@ export function getGraph(weeks: any, config: any) {
         width="700"
         height="102"
         viewBox="0 0 700 102"
-        style="
-          background-color: ${bgColor};
-          border-radius: 4px;
-        "
         role="img"
         aria-labelledby="descId"
       >
+        <rect 
+          x="0" y="0"
+          width="700"
+          height="102"
+          style="fill: ${bgColor !== "none" ? "#" : ""}${bgColor};"
+          rx="5"
+        />
         ${contributions}
 
         ${animation.animation(weeks)}

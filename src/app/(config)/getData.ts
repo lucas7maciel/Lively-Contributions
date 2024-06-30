@@ -44,7 +44,7 @@ export async function getContributions(username: string) {
   }
 
   const weeks =
-    res.data.user.contributionsCollection.contributionCalendar.weeks;
+    res?.data.user?.contributionsCollection.contributionCalendar.weeks;
 
-  return weeks;
+  return weeks || [];
 }
