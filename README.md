@@ -39,7 +39,7 @@ Choose the color pallete of contribution squares
 
 ### Other props
 - Delay: number;
-...
+- ...
 
 # Soon coming
 - Users' stats;
