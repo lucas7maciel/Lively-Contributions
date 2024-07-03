@@ -45,7 +45,10 @@ export default function Dropdown(props: DropdownProps) {
             text={item.text}
             value={item.value}
             icon={item.icon}
-            setValue={props.setValue}
+            setValue={(val) => {
+              setOpen(false);
+              props.setValue(val);
+            }}
           />
         ))}
       </div>
@@ -65,9 +68,7 @@ function ModalItem(props: DropdownItemProps) {
     <div
       className="flex items-center gap-2 py-3 px-4 text-nowrap hover:bg-gray-200 cursor-pointer transition"
       onClick={() => {
-        if (props.setValue) {
-          props.setValue(props?.value);
-        }
+        if (props.setValue) props.setValue(props?.value);
       }}
     >
       {props.icon && (

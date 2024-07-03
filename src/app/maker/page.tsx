@@ -21,16 +21,19 @@ import { Icon as BgIcon, Content as BgContent } from "@/components/bgSelector";
 import NavigateBackIcon from "/public/icons/navigate-back.svg";
 import CopyIcon from "/public/icons/copy.svg";
 import { ScaleIcon, DropIcon, PacmanIcon, RandomIcon } from "./animationIcons";
+import { useMessage } from "@/hooks/useMessage";
 
 export default function Maker() {
   // Link props
   const [gitAcc, setGitAcc] = useState<string>("");
   const [anim, setAnim] = useState<AnimationsValue>("scale");
-  const [color, setColor] = useState<string>("yellow");
+  const [color, setColor] = useState<string>("dark");
   const [bg, setBg] = useState<string>("dark");
   const [delay, setDelay] = useState<number>(0);
 
   const [imgLoaded, setImgLoaded] = useState<boolean>(true);
+
+  const { popUp } = useMessage();
 
   const link = `https://lively-contributions-blush.vercel.app/${
     gitAcc || "_"
@@ -68,7 +71,10 @@ export default function Maker() {
   const CurrIcon = icons[anim];
 
   function copyLink() {
-    navigator.clipboard.writeText(link);
+    navigator?.clipboard
+      .writeText(link)
+      .then(() => popUp("Link copiado com sucesso!", 1.5))
+      .catch(() => popUp("Falha ao copiar link", 1.5))
   }
 
   return (
@@ -89,8 +95,6 @@ export default function Maker() {
       {/* Set properties */}
       <div className="flex flex-col items-center justify-center">
         <div className="block">
-          {/* <p className="text-xl mb-1">Github username</p> */}
-
           <div className="px-5 py-3 flex items-center gap-3 border rounded-lg">
             <input
               className="text-base outline-none"
@@ -116,6 +120,7 @@ export default function Maker() {
           title="Color"
           icon={<ColorIcon color={color} />}
           content={<ColorContent color={color} setColor={setColor} bg={bg} />}
+          closeOnChange={color}
         />
 
         <PopUp
@@ -128,6 +133,7 @@ export default function Maker() {
           title="Delay"
           icon={<DelayIcon delay={delay} />}
           content={<DelayContent setDelay={setDelay} />}
+          closeOnChange={delay}
         />
       </div>
 

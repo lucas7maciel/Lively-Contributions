@@ -11,7 +11,12 @@ interface IconProps {
 export function Icon(props: IconProps) {
   return props.color ? (
     <div
-      style={{ backgroundColor: "#" + themes[props.color] || props.color }}
+      style={{
+        backgroundColor: `#${themes[props.color] || props.color}`.replace(
+          "##",
+          "#"
+        ),
+      }}
       className="w-[2rem] h-[2rem] rounded"
     />
   ) : (

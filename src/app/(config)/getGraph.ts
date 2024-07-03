@@ -66,7 +66,37 @@ export function getGraph(weeks: any, config: any) {
         />
         ${contributions}
 
-        ${animation.animation(weeks)}
+        ${weeks.length && animation.animation(weeks)}
+        ${
+          weeks.length ||
+          `
+          <defs>
+            <style type="text/css">@import url('https://fonts.googleapis.com/css?family=Nunito');</style>
+          </defs>
+
+         <text 
+          x="50%" y="45%" 
+          text-anchor="middle"
+          dominant-baseline="middle" 
+           
+          style="font-family: 'Nunito'"
+          fill="${color[1]}" 
+          font-size="25"
+          >THIS USER DOES NOT EXIST
+         </text>
+
+         <text
+          x="50%" y="70%" 
+          text-anchor="middle"
+          dominant-baseline="middle" 
+
+          style="font-family: 'Nunito'"
+          fill="${color[1]}"
+          font-size="15"
+          > Check for correct spelling
+         </text>
+        `
+        }
       </svg>`;
 }
 

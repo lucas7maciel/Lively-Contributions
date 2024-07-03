@@ -1,5 +1,5 @@
 // Hooks
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useClickOutside } from "@/hooks/useClickOutside";
 // Components
 import Image from "next/image";
@@ -12,14 +12,95 @@ interface PopUpProps {
   title?: string;
   icon: ReactNode;
   content: ReactNode;
+  closeOnChange?: any;
 }
 
 export function PopUp(props: PopUpProps) {
   const [open, setOpen] = useState<boolean>(false);
+  const [dir, setDir] = useState<{
+    x: "left" | "center" | "right";
+    y: "top" | "mid" | "bottom";
+  }>({
+    x: "right",
+    y: "bottom",
+  });
+
   const expand = useRef<HTMLImageElement | null>(null);
   const modal = useRef<HTMLDivElement | null>(null);
 
+  const dirStyles = {
+    // X pos
+    left: "right-0",
+    center: "left-[50%] translate-x-[-50%]",
+    right: "left-0",
+    // Y Pos
+    top: "bottom-[105%]",
+    mid: "top-[50%] translate-y-[-50%]",
+    bottom: "top-[105%]",
+    // General pos
+    bottomright: "origin-top-left rounded-ss-sm",
+    bottomcenter: "origin-[50%_0%]",
+    bottomleft: "origin-top-right rounded-se-sm",
+    midright: "origin-[0%_50%]",
+    midcenter: "origin-center",
+    midleft: "origin-[100%_50%]",
+    topright: "origin-bottom-left rounded-es-sm",
+    topcenter: "origin-[50%_100%]",
+    topleft: "origin-bottom-right rounded-ee-sm",
+  };
+
+  function handleDir() {
+    const modalMeasures = expand.current?.getBoundingClientRect();
+
+    if (!modalMeasures) {
+      setDir({ x: "right", y: "bottom" });
+      return true;
+    }
+
+    const { x, y } = modalMeasures;
+    const { clientWidth, clientHeight } = document.documentElement;
+
+    let xDir: "left" | "center" | "right";
+    let yDir: "top" | "mid" | "bottom";
+
+    // Otimizar
+    if (x >= clientWidth / 1.5) {
+      xDir = "left";
+    } else if (x >= clientWidth / 3 && clientWidth) {
+      xDir = "center";
+    } else {
+      xDir = "right";
+    }
+
+    if (y >= clientHeight / 1.5) {
+      yDir = "top";
+    } else if (x >= clientHeight / 3 && clientHeight < 455) {
+      yDir = "mid";
+    } else {
+      yDir = "bottom";
+    }
+
+    setDir({ x: xDir, y: yDir });
+  }
+
+  function handleModal(open: boolean): boolean {
+    if (open) {
+      return false;
+    }
+
+    handleDir()
+    return true;
+  }
+
   useClickOutside([expand, modal], () => setOpen(false));
+
+  useEffect(() => {
+    handleDir()
+  }, [])
+
+  useEffect(() => {
+    setOpen(false);
+  }, [props.closeOnChange]);
 
   return (
     <div>
@@ -34,7 +115,7 @@ export function PopUp(props: PopUpProps) {
           width={30}
           height={30}
           alt="Expand"
-          onClick={() => setOpen((val) => !val)}
+          onClick={() => setOpen(handleModal)}
         />
 
         {props.icon}
@@ -42,9 +123,11 @@ export function PopUp(props: PopUpProps) {
         {/* Modal */}
         <div
           ref={modal}
-          className={`absolute top-[105%] left-0 z-10 px-4 py-2 bg-gray-200 rounded rounded-ss-sm origin-top-left scale-0 ${
+          className={`absolute z-10 px-4 py-2 bg-gray-200 rounded transition-[transform] duration-300 scale-0 ${
             open ? "scale-100" : ""
-          } transition-[transform]`}
+          } ${dirStyles[dir.x]} ${dirStyles[dir.y]} ${
+            dirStyles[`${dir.y}${dir.x}`]
+          }`}
         >
           {props.content}
         </div>

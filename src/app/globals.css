@@ -50,3 +50,43 @@ button:hover,
 .button:hover {
   background-color: rgb(63, 63, 63);
 }
+
+/* Popup */
+.popup {
+  position: fixed;
+  left: 50%;
+  bottom: 2rem;
+  transform: translateX(-50%);
+  z-index: 10;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  max-height: 3.5rem;
+
+  padding: 0.2rem 1rem;
+
+  background-color: white;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+  border-radius: 0.5rem;
+}
+
+@keyframes popup {
+  0% {
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  80% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
