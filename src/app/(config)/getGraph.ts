@@ -80,7 +80,8 @@ export function getGraph(weeks: any, config: any) {
           dominant-baseline="middle" 
            
           style="font-family: 'Nunito'"
-          fill="${color[1]}" 
+          fill="white" 
+          stroke="black"
           font-size="25"
           >THIS USER DOES NOT EXIST
          </text>
@@ -91,7 +92,8 @@ export function getGraph(weeks: any, config: any) {
           dominant-baseline="middle" 
 
           style="font-family: 'Nunito'"
-          fill="${color[1]}"
+          fill="white"
+          stroke="black"
           font-size="15"
           > Check for correct spelling
          </text>

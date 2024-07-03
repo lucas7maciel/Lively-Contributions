@@ -9,10 +9,15 @@ import { ReactNode } from "react";
 import ExpandIcon from "/public/icons/down.svg";
 
 interface PopUpProps {
-  title?: string;
   icon: ReactNode;
   content: ReactNode;
+  title?: string;
   closeOnChange?: any;
+  expandSize?: number;
+  reverse?: boolean;
+  transparent?: boolean;
+  noPaddingExpand?: boolean;
+  noPaddingModal?: boolean;
 }
 
 export function PopUp(props: PopUpProps) {
@@ -88,15 +93,15 @@ export function PopUp(props: PopUpProps) {
       return false;
     }
 
-    handleDir()
+    handleDir();
     return true;
   }
 
   useClickOutside([expand, modal], () => setOpen(false));
 
   useEffect(() => {
-    handleDir()
-  }, [])
+    handleDir();
+  }, []);
 
   useEffect(() => {
     setOpen(false);
@@ -107,14 +112,20 @@ export function PopUp(props: PopUpProps) {
       {props.title && <p className="text-start">{props.title}</p>}
 
       {/* Selector */}
-      <div className="relative flex items-center gap-3 px-4 py-2 bg-gray-200 rounded-md">
+      <div
+        className={`relative flex items-center gap-3 rounded-md cursor-pointer ${
+          props.reverse ? "flex-row-reverse" : ""
+        } ${!props.transparent ? "bg-gray-100 hover:bg-gray-200 transition" : ""} ${
+          !props.noPaddingModal ? "px-4 py-2" : ""
+        }`}
+      >
         <Image
           ref={expand}
-          className={`cursor-pointer ${open ? "rotate-180" : ""} transition`}
+          className={`cursor-pointer ${open ? "rotate-180" : ""} hover:scale-110 transition duration-300`}
           src={ExpandIcon}
-          width={30}
-          height={30}
-          alt="Expand"
+          width={props.expandSize || 30}
+          height={props.expandSize || 30}
+          alt={open ? "Retract" : "Expand"}
           onClick={() => setOpen(handleModal)}
         />
 
@@ -123,11 +134,11 @@ export function PopUp(props: PopUpProps) {
         {/* Modal */}
         <div
           ref={modal}
-          className={`absolute z-10 px-4 py-2 bg-gray-200 rounded transition-[transform] duration-300 scale-0 ${
+          className={`absolute z-10 bg-gray-100 rounded transition-[transform] duration-300 scale-0 ${
             open ? "scale-100" : ""
-          } ${dirStyles[dir.x]} ${dirStyles[dir.y]} ${
-            dirStyles[`${dir.y}${dir.x}`]
-          }`}
+          } ${!props.noPaddingModal ? "px-4 py-2" : ""} ${dirStyles[dir.x]} ${
+            dirStyles[dir.y]
+          } ${dirStyles[`${dir.y}${dir.x}`]}`}
         >
           {props.content}
         </div>

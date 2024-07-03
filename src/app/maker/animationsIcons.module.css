@@ -74,3 +74,21 @@
     stroke-dashoffset: -2.25;
   }
 }
+
+.jump {
+  animation: jump 3s infinite;
+}
+
+@keyframes jump {
+  0% {
+    transform: scale(1);
+  }
+
+  10% {
+    transform: scale(1.2);
+  }
+
+  20% {
+    transform: scale(1);
+  }
+}

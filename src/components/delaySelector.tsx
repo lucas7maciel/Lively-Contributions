@@ -22,7 +22,7 @@ export function Content(props: ContentProps) {
       {values.map((val) => (
         <span
           key={val}
-          className="text-xs w-[2rem] py-1 px-2 font-bold text-gray-600 bg-gray-300 hover:bg-gray-400 hover:scale-[1.1] rounded cursor-pointer transition"
+          className="text-xs w-[2rem] py-1 px-2 font-bold text-gray-500 bg-gray-300 hover:bg-gray-400 hover:scale-[1.1] rounded cursor-pointer transition"
           onClick={() => props.setDelay(val)}
         >
           {val}

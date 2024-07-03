@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { colors as themes, bg as bgThemes } from "@/app/(config)/themes";
+import animIcons from "@/app/maker/animationsIcons.module.css";
 
 interface IconProps {
   color: string;
@@ -37,8 +38,11 @@ export function Content(props: ContentProps) {
         {[0, 1, 2, 3, 4].map((index) => (
           <div
             key={index}
-            className="w-3 h-3 bg-[white] rounded-sm"
-            style={{ backgroundColor: themes[hovered || props.color][index] }}
+            className={`w-3 h-3 bg-[white] rounded-sm ${animIcons.jump}`}
+            style={{
+              backgroundColor: themes[hovered || props.color][index],
+              animationDelay: `${index * 0.3}s`,
+            }}
           />
         ))}
       </div>
