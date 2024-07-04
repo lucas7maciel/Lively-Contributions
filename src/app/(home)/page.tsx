@@ -1,15 +1,11 @@
 // Components
 import Link from "next/link";
-import Image from "next/image";
-import ContributionsBg from "./contributionsBg";
-// Assets
-import DownIcon from "/public/icons/down.svg";
 
 export default function Home() {
   return (
     <div className="relative pa-4 min-h-screen w-full flex items-center flex-col justify-center text-center overflow-hidden">
-      <h1 className="text-6xl">Lively</h1>
-      <h2 className="mt-2 text-2xl">
+      <h1 className="text-6xl text-black">Lively</h1>
+      <h2 className="mt-2 text-2xl text-black">
         Your progress. <span className="font-bold">Your Way.</span>
       </h2>
 
@@ -17,7 +13,7 @@ export default function Home() {
         <Link href="maker" className="button w-[8.5rem]">
           CREATE
         </Link>
-        <Link href="docs" className="font-bold">
+        <Link href="docs" className="font-bold text-black">
           DOCS
         </Link>
       </div>

@@ -109,11 +109,10 @@ export function PopUp(props: PopUpProps) {
 
   return (
     <div>
-      {props.title && <p className="text-start">{props.title}</p>}
-
       {/* Selector */}
+      {props.title && <p className="font-bold text-sm text-center text-gray-600 mb-1">{props.title}</p>}
       <div
-        className={`relative flex items-center gap-3 rounded-md cursor-pointer ${
+        className={`relative flex items-center gap-3 rounded-lg cursor-pointer ${
           props.reverse ? "flex-row-reverse" : ""
         } ${!props.transparent ? "bg-gray-100 hover:bg-gray-200 transition" : ""} ${
           !props.noPaddingModal ? "px-4 py-2" : ""
