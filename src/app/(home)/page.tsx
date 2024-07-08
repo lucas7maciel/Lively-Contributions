@@ -18,6 +18,9 @@ export default function Home() {
         </Link>
       </div>
 
+      <p className="font-bold text-red-500 text-center absolute bottom-5 left-1/2 translate-x-[-50%]">
+        Under development
+      </p>
       {/* <ContributionsBg /> */}
 
       {/* <Image

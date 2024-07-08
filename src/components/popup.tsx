@@ -120,7 +120,7 @@ export function PopUp(props: PopUpProps) {
       >
         <Image
           ref={expand}
-          className={`cursor-pointer ${open ? "rotate-180" : ""} hover:scale-110 transition duration-300`}
+          className={`cursor-pointer ${open ? "rotate-180" : ""} opacity-60 hover:scale-110 transition duration-300`}
           src={ExpandIcon}
           width={props.expandSize || 30}
           height={props.expandSize || 30}

@@ -80,7 +80,7 @@ export default function Maker() {
         <div className="block">
           <div className="px-5 py-3 flex items-center gap-3 border rounded-lg">
             <input
-              className="text-base outline-none"
+              className="text-base outline-none text-black"
               type="text"
               placeholder="Github username"
               value={gitAcc}
@@ -129,18 +129,23 @@ export default function Maker() {
       </div>
 
       {/* Link */}
-      <div className="mb-6 w-[90%] max-w-[23rem] hover:max-w-[90%] transition-[max-width] duration-1000 cursor-pointer">
+      <div
+        className={`mb-6 w-[90%] sm:w-[60%] max-w-[23rem] hover:max-w-[90%] sm:hover:max-w-[60%] transition-[max-width] duration-1000 cursor-pointer`}
+      >
         <p className="mb-1 font-bold text-base text-gray-800">Link</p>
 
         <div
           className="flex gap-3 items-center p-2 border rounded-lg hover:bg-gray-50 transition"
           onClick={() => copyLink()}
         >
-          <p className="text-gray-700 flex-1 truncate" title={link}>
+          <p
+            className="text-gray-700 hover:text-gray-600 flex-1 truncate"
+            title={link}
+          >
             {link}
           </p>
           <Image
-            className="opacity-70 hover:opacity-90 transition"
+            className="opacity-70 hover:opacity-60 transition"
             src={CopyIcon}
             width={20}
             height={20}
@@ -157,7 +162,7 @@ export default function Maker() {
       </div>
 
       {/* Preview */}
-      <div>
+      <div className="px-3">
         <p className="mb-2 font-bold text-xl text-gray-800">Preview</p>
         <Image
           className="p-1 border rounded cursor-pointer"

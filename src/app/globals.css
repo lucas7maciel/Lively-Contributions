@@ -51,6 +51,30 @@ button:hover,
   background-color: rgb(63, 63, 63);
 }
 
+/* Table */
+table {
+  background-color: rgb(75 85 99 / 0.05);
+
+  border-collapse: separate !important;
+  border-spacing: 0;
+  border-radius: 1rem;
+
+  overflow: hidden;
+}
+
+table th,
+table td {
+  text-align: center;
+
+  padding: 0.6rem 0.8rem;
+
+  border-bottom: solid 1px rgb(75 85 99 / 0.3);
+}
+
+table th {
+  border-bottom-width: 1.5px;
+}
+
 /* Popup */
 .popup {
   position: fixed;
@@ -66,10 +90,9 @@ button:hover,
 
   max-height: 3.5rem;
 
-  font-weight: 600;
-
   padding: 0.4rem 1rem;
 
+  color: black;
   background-color: white;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
   border-radius: 0.5rem;

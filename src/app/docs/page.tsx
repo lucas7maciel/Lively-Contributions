@@ -1,7 +1,17 @@
+import AboutUs from "./aboutUs";
+import Styles from "./styles";
+import Stacks from "./stacks";
+import Header from "./header";
+
 export default function Docs() {
   return (
-    <div className="min-h-screen w-full flex items-center flex-col justify-center text-center p-4">
-      <h1 className="text-black">Here will be the docs page, where you will be able to find out all the properties and stacks of the application</h1>
-    </div>
+    <>
+      <Header />
+      <div className="flex flex-col gap-6 px-8 py-6">
+        <AboutUs />
+        <Styles />
+        <Stacks />
+      </div>
+      </>
   );
 }
