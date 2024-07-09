@@ -27,7 +27,7 @@ export function Dashboard() {
   ];
 
   return (
-    <div className="flex flex-col items-strech gap-1 w-full h-full px-1 py-2 flex-1">
+    <div className="flex flex-col items-strech gap-1 w-full h-full p-2 flex-1">
       <p className="font-bold text-3xl text-gray-800 text-center">Lively</p>
       <hr className="mt-2 mb-3 px-1" />
 
