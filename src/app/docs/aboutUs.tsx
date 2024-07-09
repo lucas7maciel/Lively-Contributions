@@ -1,6 +1,6 @@
 export default function AboutUs() {
   return (
-    <section>
+    <section id="aboutUs">
       <h3 className="font-bold text-gray-800 text-3xl mb-1">
         What is Lively Contributions?
       </h3>

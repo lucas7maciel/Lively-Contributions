@@ -7,13 +7,13 @@ import { StackCard } from "./stackCard";
 
 export default function Stacks() {
   return (
-    <section>
+    <section id="stacks">
       <h3 className="font-bold text-gray-800 text-3xl mb-1">Stacks</h3>
       <p className="font-semibold text-gray-700 mb-6">
         Here is a list of the technologies used in the project:
       </p>
 
-      <div className="grid xl:grid-cols-4 sm:grid-cols-2 gap-8 w-full">
+      <div className="grid lg:grid-cols-2 gap-8 w-full">
         <StackCard
           iconUrl={NextIcon}
           title="NextJS"

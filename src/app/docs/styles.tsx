@@ -1,6 +1,6 @@
 export default function Styles() {
   return (
-    <section>
+    <section id="styles">
       <h3 className="font-bold text-gray-800 text-3xl mb-1">Styles</h3>
       <p className="font-semibold text-gray-700 mb-4">
         As for stylizations, we offer the following options:
