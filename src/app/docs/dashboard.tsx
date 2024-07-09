@@ -9,15 +9,15 @@ export function Dashboard() {
   const sections: SectionItem[] = [
     {
       text: "About Us",
-      redir: "#aboutUs",
+      redir: "docs/#aboutUs",
     },
     {
       text: "Styles",
-      redir: "#styles",
+      redir: "docs/#styles",
     },
     {
       text: "Stacks",
-      redir: "#stacks",
+      redir: "docs/#stacks",
     },
   ];
 
@@ -46,14 +46,12 @@ export function Dashboard() {
 
 function Section(props: SectionItem) {
   return (
-    <div className="hover:bg-gray-100 w-full py-2 px-2 rounded-lg cursor-pointer transition">
-      <Link
-        className="font-semibold text-gray-500"
-        href={props.redir}
-        scroll={true}
-      >
-        {props.text}
-      </Link>
-    </div>
+    <Link
+      className="font-semibold text-gray-500 hover:bg-gray-100 w-full py-2 px-2 rounded-lg cursor-pointer transition"
+      href={props.redir}
+      scroll={true}
+    >
+      {props.text}
+    </Link>
   );
 }
