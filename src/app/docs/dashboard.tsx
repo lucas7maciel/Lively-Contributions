@@ -50,7 +50,7 @@ function Section(props: SectionItem) {
       <Link
         className="font-semibold text-gray-500"
         href={props.redir}
-        scroll={false}
+        scroll={true}
       >
         {props.text}
       </Link>
