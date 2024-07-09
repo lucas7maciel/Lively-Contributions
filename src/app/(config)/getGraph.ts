@@ -27,6 +27,8 @@ export function getGraph(weeks: any, config: any) {
   config.size = cfg.size;
   config.rx = cfg.rx;
 
+  weeks.delay = config.delay
+
   // Set contribution rects (week defines X Axis)
   const contributions: string[] = weeks.map((week: any, weekIndex: number) =>
     // Day defines Y Axis

@@ -7,7 +7,7 @@ import { StackCard } from "./stackCard";
 
 export default function Stacks() {
   return (
-    <section id="stacks">
+    <section id="stacks" className="py-4">
       <h3 className="font-bold text-gray-800 text-3xl mb-1">Stacks</h3>
       <p className="font-semibold text-gray-700 mb-6">
         Here is a list of the technologies used in the project:

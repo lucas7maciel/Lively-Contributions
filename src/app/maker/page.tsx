@@ -36,7 +36,7 @@ export default function Maker() {
 
   const { popUp } = useMessage();
 
-  const link = `http://lively-contributions-blush.vercel.app/${
+  const link = `https://lively-contributions-blush.vercel.app/${
     gitAcc || "_"
   }/${anim}/?bg=${bg.replace("#", "")}&color=${color}&delay=${delay}`;
 
@@ -171,6 +171,7 @@ export default function Maker() {
           height={102}
           alt="Generated graph preview"
           onClick={() => window.open(link)}
+          unoptimized
         />
       </div>
     </div>

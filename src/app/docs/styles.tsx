@@ -1,6 +1,6 @@
 export default function Styles() {
   return (
-    <section id="styles">
+    <section id="styles" className="py-4">
       <h3 className="font-bold text-gray-800 text-3xl mb-1">Styles</h3>
       <p className="font-semibold text-gray-700 mb-4">
         As for stylizations, we offer the following options:
@@ -27,12 +27,12 @@ export default function Styles() {
           </tr>
           <tr>
             <td>Bg</td>
-            <td>Light, Dark, any color (HEX)</td>
+            <td>Light, Dark, None, any color (HEX)</td>
             <td>Dark</td>
           </tr>
           <tr>
             <td>Delay</td>
-            <td>Any int/float value (in seconds)</td>
+            <td>Any float value (seconds)</td>
             <td>0s</td>
           </tr>
         </tbody>

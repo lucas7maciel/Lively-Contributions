@@ -16,7 +16,7 @@ export function contribution(props: any) {
       rx="10"
   
       style="
-        animation-delay: ${animDelay}s;
+        animation-delay: ${animDelay + parseFloat(props.delay)}s;
         fill: ${props.color};
       "
     />

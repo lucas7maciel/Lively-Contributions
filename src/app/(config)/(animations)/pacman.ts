@@ -3,6 +3,7 @@ export const animation = (weeks: any) => {
   // Formatar
   // Pegar da config (spacing + size)
   const rightCorner = (weeks.length - 1) * 13;
+  const delay: number = parseFloat(weeks.delay)
 
   return `
 <circle 
@@ -33,9 +34,9 @@ export const animation = (weeks: any) => {
 
     animation-delay: 
         0s,
-        0s, 10s, 10.5s, 20.5s, 21s, 31s, 31.5s, 
-        41.5s, 42s, 52s, 52.5s, 62.5s, 63s,
-        73s;
+        ${delay}s, ${10 + delay}s, ${10.5 + delay}s, ${20.5 + delay}s, ${21 + delay}s, ${31 + delay}s, ${31.5 + delay}s, 
+        ${41.5 + delay}s, ${42 + delay}s, ${52 + delay}s, ${52.5 + delay}s, ${62.5 + delay}s, ${63 + delay}s,
+        ${73 + delay}s;
 
     animation-duration: 
         0.3s,
