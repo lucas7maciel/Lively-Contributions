@@ -2,8 +2,8 @@ export function contribution(props: any) {
   // Dar uma organizada aqui
   const animDelay =
     props.day % 2 == 0
-      ? (10 / props.weeks) * (props.week - 1) + props.day * 10.5                    // Moving right
-      : (10 / props.weeks) * (props.weeks - props.week) + props.day * 10.5;   // Moving left
+      ? (10 / props.weeks) * (props.week - 1) + props.day * 10.5 // Moving right
+      : (10 / props.weeks) * (props.weeks - props.week) + props.day * 10.5; // Moving left
 
   return `
     <rect
@@ -16,7 +16,7 @@ export function contribution(props: any) {
       rx="10"
   
       style="
-        animation-delay: ${animDelay + parseFloat(props.delay)}s;
+        animation-delay: ${animDelay + (parseFloat(props.delay) || 0)}s;
         fill: ${props.color};
       "
     />
