@@ -14,7 +14,7 @@ export function MenuIcon(props: MenuIconProps) {
     <svg
       id="hamburger"
       ref={props.activator}
-      className={`cursor-pointer hover:opacity-60 transition ${styles.menu} ${props.open ? styles.retract : ''}`}
+      className={`cursor-pointer hover:opacity-60 hover:scale-110 transition ${styles.menu} ${props.open ? styles.retract : ''}`}
       width={width + 'px'}
       height={props.height + 'px'}
       viewBox="0 0 60 40"

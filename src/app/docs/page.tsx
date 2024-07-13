@@ -6,12 +6,9 @@ import Stacks from "./stacks";
 import Header from "./header";
 import { Dashboard } from "./dashboard";
 import { useRef, useState } from "react";
-import { useMediaQuery } from "react-responsive";
 
 export default function Docs() {
-  const isLarge = useMediaQuery({ query: "(min-width: 1024px)" });
-
-  const [menuOpen, setMenuOpen] = useState<boolean>(isLarge); // 1024px = lg
+  const [menuOpen, setMenuOpen] = useState<boolean>(false);
 
   const page = useRef<HTMLDivElement | null>(null);
   const activator = useRef<SVGElement | null>(null);
@@ -23,8 +20,8 @@ export default function Docs() {
       <div
         id="scroll"
         className={`relative mt-[4.5rem] w-full h-full ${
-          menuOpen ? "lg:pl-[250px]" : "lg:pl-0"
-        } transition-[padding] overflow-y-auto`}
+          menuOpen ? "lg-pl-[250px]" : "pl-0"
+        } lg:pl-[250px] transition-[padding] overflow-y-auto`}
       >
         <Dashboard
           open={menuOpen}

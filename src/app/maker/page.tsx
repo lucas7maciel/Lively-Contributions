@@ -48,9 +48,9 @@ export default function Maker() {
   }
 
   return (
-    <div className="min-h-screen w-full pb-8 flex flex-col items-center justify-between text-center bg-gray-50">
+    <div className="min-h-screen w-full pb-8 flex flex-col gap-5 items-center justify-between text-center bg-gray-50">
       {/* Header */}
-      <header className="w-full flex items-center gap-4 text-center p-4 pb-2">
+      <header className="w-full flex items-center justify-between gap-4 text-center p-4 pb-2">
         <Link href="/">
           <Image
             className="cursor-pointer hover:opacity-70 hover:scale-125 transition duration-200 grayscale"
@@ -62,7 +62,7 @@ export default function Maker() {
           />
         </Link>
 
-        <h1 className="flex-1 font-bold text-2xl text-black">Maker</h1>
+        <h1 className="flex-1 font-bold text-2xl leading-[40px] text-gray-900">Maker</h1>
 
         <Link href="/docs">
           <Image

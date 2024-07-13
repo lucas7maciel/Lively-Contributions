@@ -27,7 +27,7 @@ export default function Home() {
     </div>
     <Slide />
     <div className="text-center py-12">
-      <p className="font-bold text-2xl">Stats Page</p>
+      <p className="font-bold text-2xl text-gray-900">Stats Page</p>
       <p className="font-bold text-red-500 text-xl mb-1">Under development...</p>
     </div>
     </>
