@@ -1,11 +1,11 @@
 import { useClickOutside } from "@/hooks/useClickOutside";
+import { remToPixels } from "@/utils/font";
 import Link from "next/link";
 import { useRef } from "react";
 
 interface DashboardProps {
   open: boolean;
   activator: any;
-  scrollable: any;
   setOpen: (val: boolean) => void;
 }
 
@@ -36,9 +36,9 @@ export function Dashboard(props: DashboardProps) {
 
   return (
     <div
-      className={`absolute top-0 left-0 border-r shadow-lg ${
+      className={`fixed top-0 left-0 border-r shadow-lg ${
         !props.open ? "left-[-255px]" : ""
-      } transition-[left] w-[250px] max-w-full h-full flex flex-col items-strech gap-1 p-6 flex-1 bg-white`}
+      } transition-[left] mt-[4.5rem] w-[250px] max-w-full h-full flex flex-col items-strech gap-1 p-6 flex-1 bg-gray-50 overflow-y-auto`}
       ref={modal}
     >
       <p className="mb-1 px-2 font-bold text-gray-400 text-xs">Sections</p>
@@ -48,13 +48,18 @@ export function Dashboard(props: DashboardProps) {
           text={section.text}
           redir={section.redir}
           setOpen={props.setOpen}
-          scrollable={props.scrollable}
+          scroll
         />
       ))}
 
       <p className="mt-3 mb-1 px-2 font-bold text-gray-400 text-xs">Pages</p>
       {pages.map((section, index) => (
-        <Section key={index} text={section.text} redir={section.redir} />
+        <Section
+          key={index}
+          text={section.text}
+          redir={section.redir}
+          setOpen={props.setOpen}
+        />
       ))}
     </div>
   );
@@ -63,35 +68,40 @@ export function Dashboard(props: DashboardProps) {
 interface SectionItem {
   text: string;
   redir: string;
-  scrollable?: any;
   setOpen?: (val: boolean) => void;
+  scroll?: boolean;
 }
 
 function Section(props: SectionItem) {
-  // Arrumar essa gambiarra dps
-  function scrollInto() {
-    const el = document.querySelector(props.redir)
+  const styles =
+    "font-semibold text-gray-500 hover:bg-gray-100 w-full py-2 px-2 rounded-lg cursor-pointer transition";
 
-    if (!el) {
-      return
-    }
-
-    const {top} = el.getBoundingClientRect()
-
-    props.scrollable.current.scroll(0, top, {behavior: 'smooth'})
-  }
-
-  return !props.scrollable ? (
-    <Link
-      className="font-semibold text-gray-500 hover:bg-gray-100 w-full py-2 px-2 rounded-lg cursor-pointer transition"
-      href={props.redir}
-    >
+  return !props.scroll ? (
+    <Link className={styles} href={props.redir}>
       {props.text}
     </Link>
   ) : (
     <div
-      className="font-semibold text-gray-500 hover:bg-gray-100 w-full py-2 px-2 rounded-lg cursor-pointer transition"
-      onClick={() => scrollInto()}
+      className={styles}
+      onClick={() => {
+        if (props.setOpen) {
+          props.setOpen(false);
+        }
+
+        const el = document.querySelector(props.redir);
+
+        if (!el) {
+          return;
+        }
+
+        const { top } = el.getBoundingClientRect();
+        const padding = remToPixels(5);
+
+        window.scrollTo({
+          top: window.scrollY + top - padding,
+          behavior: "smooth",
+        });
+      }}
     >
       {props.text}
     </div>

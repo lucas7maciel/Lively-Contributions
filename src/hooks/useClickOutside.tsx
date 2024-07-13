@@ -20,9 +20,15 @@ export function useClickOutside(refs: any, onClickOutside: any) {
     }
 
     document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener("mouseleave", () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    });
 
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
+      document.addEventListener("mouseleave", () => {
+        document.removeEventListener("mousedown", handleClickOutside);
+      });
     };
   }, [onClickOutside, refs]);
 }

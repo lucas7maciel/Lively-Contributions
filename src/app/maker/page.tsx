@@ -21,7 +21,7 @@ import {
 } from "@/components/animSelector";
 import { Icon as BgIcon, Content as BgContent } from "@/components/bgSelector";
 // Icons
-import NavigateBackIcon from "/public/icons/navigate-back.svg";
+import NavigateBackIcon from "/public/logo.svg";
 import CopyIcon from "/public/icons/copy.svg";
 import InfoIcon from "/public/icons/info.svg";
 import { useMessage } from "@/hooks/useMessage";
@@ -48,15 +48,15 @@ export default function Maker() {
   }
 
   return (
-    <div className="min-h-screen w-full pb-8 flex flex-col items-center justify-between text-center">
+    <div className="min-h-screen w-full pb-8 flex flex-col items-center justify-between text-center bg-gray-50">
       {/* Header */}
-      <header className="w-full flex items-center gap-4 text-center p-6">
+      <header className="w-full flex items-center gap-4 text-center p-4 pb-2">
         <Link href="/">
           <Image
-            className="cursor-pointer hover:opacity-70 transition duration-100"
+            className="cursor-pointer hover:opacity-70 hover:scale-125 transition duration-200 grayscale"
             src={NavigateBackIcon}
-            width={25}
-            height={25}
+            width={40}
+            height={40}
             alt="Home"
             title="Home"
           />
@@ -64,21 +64,22 @@ export default function Maker() {
 
         <h1 className="flex-1 font-bold text-2xl text-black">Maker</h1>
 
-        <Image
-          className="cursor-pointer hover:opacity-70 transition duration-100"
-          src={InfoIcon}
-          width={25}
-          height={25}
-          alt="How it works"
-          title="How it works"
-          onClick={() => alert("Info will be added soon")}
-        />
+        <Link href="/docs">
+          <Image
+            className="cursor-pointer hover:opacity-70 hover:scale-125 transition duration-200"
+            src={InfoIcon}
+            width={40}
+            height={40}
+            alt="How it works"
+            title="How it works"
+          />
+        </Link>
       </header>
 
       {/* Set properties */}
       <div className="flex flex-col items-center justify-center">
         <div className="block">
-          <div className="px-5 py-3 flex items-center gap-3 border rounded-lg">
+          <div className="px-5 py-3 flex items-center gap-3 border rounded-lg bg-white">
             <input
               className="text-base outline-none text-black"
               type="text"
@@ -97,7 +98,7 @@ export default function Maker() {
               reverse
             />
           </div>
-          <p className="mt-2 text-xs text-gray-300 font-semibold">
+          <p className="mt-2 text-xs text-gray-400 font-semibold">
             You can search for any profile
           </p>
         </div>
@@ -105,7 +106,7 @@ export default function Maker() {
 
       {/* Props */}
       <div>
-        <div className="flex flex-wrap gap-6 justify-center">
+        <div className="flex flex-wrap gap-6 justify-center px-8">
           <PopUp
             title="Color"
             icon={<ColorIcon color={color} />}
@@ -135,7 +136,7 @@ export default function Maker() {
         <p className="mb-1 font-bold text-base text-gray-800">Link</p>
 
         <div
-          className="flex gap-3 items-center p-2 border rounded-lg hover:bg-gray-50 transition"
+          className="flex gap-3 items-center p-2 border rounded-lg bg-white hover:bg-gray-100 transition duration-1000"
           onClick={() => copyLink()}
         >
           <p
@@ -154,7 +155,7 @@ export default function Maker() {
           />
         </div>
         <p
-          className="mt-2 text-xs text-gray-300 hover:text-gray-400 transition duration-300 font-semibold cursor-pointer"
+          className="mt-2 text-xs text-gray-400 hover:text-gray-500 transition duration-300 font-semibold cursor-pointer"
           onClick={() => copyLink()}
         >
           Click to copy

@@ -6,37 +6,36 @@ import Stacks from "./stacks";
 import Header from "./header";
 import { Dashboard } from "./dashboard";
 import { useRef, useState } from "react";
+import { useMediaQuery } from "react-responsive";
 
 export default function Docs() {
-  const [menuOpen, setMenuOpen] = useState<boolean>(false); // 1024px = lg
+  const isLarge = useMediaQuery({ query: "(min-width: 1024px)" });
+
+  const [menuOpen, setMenuOpen] = useState<boolean>(isLarge); // 1024px = lg
 
   const page = useRef<HTMLDivElement | null>(null);
-  const scrollable = useRef<HTMLDivElement | null>(null);
   const activator = useRef<SVGElement | null>(null);
 
   return (
-    <div ref={page} className="h-screen overflow-y-hidden" id="page">
-      <Header open={menuOpen} setOpen={setMenuOpen} activator={activator} />
+    <div ref={page} id="page" className="bg-gray-50">
+      <Header open={menuOpen} activator={activator} setOpen={setMenuOpen} />
 
-      <div className="relative h-full overflow-hidden">
+      <div
+        id="scroll"
+        className={`relative mt-[4.5rem] w-full h-full ${
+          menuOpen ? "lg:pl-[250px]" : "lg:pl-0"
+        } transition-[padding] overflow-y-auto`}
+      >
         <Dashboard
           open={menuOpen}
-          setOpen={setMenuOpen}
           activator={activator}
-          scrollable={scrollable}
+          setOpen={setMenuOpen}
         />
 
-        <div
-          ref={scrollable}
-          className={`w-full h-full overflow-y-auto ${
-            menuOpen ? "lg:pl-[250px]" : "lg:pl-0"
-          } transition-[padding]`}
-        >
-          <div className="mt-6 mx-auto px-8 max-w-[90ch]">
-            <AboutUs />
-            <Styles />
-            <Stacks />
-          </div>
+        <div className="mt-6 mx-auto px-8 max-w-[90ch]">
+          <AboutUs />
+          <Styles />
+          <Stacks />
         </div>
       </div>
     </div>

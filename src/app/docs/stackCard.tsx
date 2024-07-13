@@ -8,7 +8,7 @@ interface StackCardProps {
 
 export function StackCard(props: StackCardProps) {
   return (
-    <div className="min-w-32 p-4 text-center border rounded-lg shadow-md">
+    <div className="min-w-32 p-4 text-center border rounded-lg shadow-md bg-white">
       <Image
         className="mx-auto"
         src={props.iconUrl}

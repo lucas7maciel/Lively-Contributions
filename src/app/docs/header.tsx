@@ -2,18 +2,22 @@ import { MenuIcon } from "@/components/icons/menu";
 
 interface HeaderProps {
   open: boolean;
-  setOpen: (val: (val: boolean) => boolean) => void;
   activator: any;
+  setOpen: (val: (val: boolean) => boolean) => void;
 }
 
 export default function Header(props: HeaderProps) {
   return (
-    <header className="relative z-30 py-5 px-7 bg-gray-50 flex items-center shadow-md select-none">
+    <header className="fixed top-0 left-0 z-30 w-full py-5 px-7 bg-gray-100 flex items-center shadow-md select-none">
       <div className="flex-1 flex items-center gap-3">
         <MenuIcon
           open={props.open}
           height={25}
-          setOpen={() => props.setOpen((open) => !open)}
+          setOpen={() =>
+            props.setOpen((open) => {
+              return !open;
+            })
+          }
           activator={props.activator}
         />
 

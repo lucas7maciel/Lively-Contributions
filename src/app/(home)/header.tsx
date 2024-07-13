@@ -9,7 +9,7 @@ export default function Header() {
   return (
     <header className="flex items-center justify-between p-4 pb-2">
       <Image
-        className="cursor-pointer hover:opacity-70 transition grayscale"
+        className="cursor-pointer hover:opacity-70 hover:scale-125 transition duration-200 grayscale"
         src={LogoIcon}
         width={40}
         height={40}
@@ -21,7 +21,7 @@ export default function Header() {
         target="_blank"
       >
         <Image
-          className="cursor-pointer hover:opacity-70 transition"
+          className="cursor-pointer hover:opacity-70 hover:scale-125 transition duration-200"
           src={GithubIcon}
           width={40}
           height={40}

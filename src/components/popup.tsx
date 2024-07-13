@@ -110,17 +110,17 @@ export function PopUp(props: PopUpProps) {
   return (
     <div>
       {/* Selector */}
-      {props.title && <p className="font-bold text-sm text-center text-gray-600 mb-1">{props.title}</p>}
+      {props.title && <p className="font-bold text-sm text-center text-gray-500 mb-1">{props.title}</p>}
       <div
         className={`relative flex items-center gap-3 rounded-lg cursor-pointer ${
           props.reverse ? "flex-row-reverse" : ""
-        } ${!props.transparent ? "bg-gray-100 hover:bg-gray-200 transition" : ""} ${
+        } ${!props.transparent ? "bg-gray-200 hover:bg-gray-300 transition duration-300 border" : ""} ${
           !props.noPaddingModal ? "px-4 py-2" : ""
         }`}
       >
         <Image
           ref={expand}
-          className={`cursor-pointer ${open ? "rotate-180" : ""} opacity-60 hover:scale-110 transition duration-300`}
+          className={`cursor-pointer ${open ? "rotate-180" : ""} opacity-30 hover:scale-110 transition duration-300`}
           src={ExpandIcon}
           width={props.expandSize || 30}
           height={props.expandSize || 30}
@@ -133,7 +133,7 @@ export function PopUp(props: PopUpProps) {
         {/* Modal */}
         <div
           ref={modal}
-          className={`absolute z-10 bg-gray-100 rounded transition-[transform] duration-300 scale-0 ${
+          className={`absolute z-10 bg-gray-100 rounded transition-[transform] duration-300 scale-0 shadow-md ${
             open ? "scale-100" : ""
           } ${!props.noPaddingModal ? "px-4 py-2" : ""} ${dirStyles[dir.x]} ${
             dirStyles[dir.y]

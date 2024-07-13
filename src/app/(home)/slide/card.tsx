@@ -13,8 +13,8 @@ export function Card(props: CardProps) {
     <div
       className={`
         flex-[0_0_250px] w-[250px] h-[300px] text-center rounded-2xl 
-        shadow-lg border flex flex-col items-center justify-center gap-3
-      bg-gray-700 ${styles.card}
+        shadow-md border flex flex-col items-center justify-center gap-3
+      bg-gray-700 hover:bg-gray-600 transition duration-500 ${styles.card}
       `}
       style={{ animationDelay: delay / 10 + "s" }}
     >
