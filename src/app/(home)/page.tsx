@@ -1,14 +1,15 @@
 // Components
 import Link from "next/link";
 import Header from "./header";
-import ContributionsBg from "./contributionsBg";
+import { Slide } from "./slide";
 
 export default function Home() {
   return (
-    <div className="relative pa-4 min-h-screen w-full flex flex-col justify-center text-center overflow-hidden">
+    <>
+    <div className="relative pa-4 min-h-[80vh] w-full flex flex-col justify-center text-center overflow-hidden bg-gray-50">
       <Header />
 
-      <div className="flex-1 flex flex-col items-center justify-center text-center pb-20">
+      <div className="flex-1 flex flex-col items-center justify-center text-center ">
         <h1 className="text-6xl text-black">Lively</h1>
         <h2 className="mt-2 text-2xl text-black">
           Your progress. <span className="font-bold">Your Way.</span>
@@ -22,13 +23,13 @@ export default function Home() {
             DOCS
           </Link>
         </div>
-
-        {/* <ContributionsBg /> */}
-
-        <p className="font-bold text-red-500 text-center absolute bottom-5 left-1/2 translate-x-[-50%] px-2 py-1 bg-white rounded-xl">
-          Under development
-        </p>
       </div>
     </div>
+    <Slide />
+    <div className="text-center py-12">
+      <p className="font-bold text-2xl">Stats Page</p>
+      <p className="font-bold text-red-500 text-xl mb-1">Under development...</p>
+    </div>
+    </>
   );
 }

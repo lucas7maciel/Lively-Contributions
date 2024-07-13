@@ -49,8 +49,6 @@
     transform: translateY(0px);
     scale: 0;
   }
-
-  
 }
 
 /* Pacman */
@@ -90,5 +88,73 @@
 
   20% {
     transform: scale(1);
+  }
+}
+
+/* Random */
+.random {
+  animation: random 3s ease-in-out infinite;
+}
+
+@keyframes random {
+  0% {
+    opacity: 0;
+  }
+
+  5% {
+    opacity: 0;
+  }
+
+  25% {
+    opacity: 1;
+  }
+
+  65% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  90% {
+    opacity: 0;
+  }
+
+  95% {
+    transform: translateY(-5px);
+  }
+
+  100% {
+    transform: translateY(-5px);
+    opacity: 0;
+  }
+}
+
+/* Colors */
+.colors {
+  animation: colors 7.5s infinite;
+}
+
+@keyframes colors {
+  0% {
+    fill: green;
+  }
+
+  20% {
+    fill: yellow;
+  }
+
+  40% {
+    fill: red;
+  }
+
+  60% {
+    fill: blue;
+  }
+
+  80% {
+    fill: purple;
+  }
+
+  100% {
+    fill: white;
   }
 }

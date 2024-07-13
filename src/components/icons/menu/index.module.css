@@ -1,0 +1,120 @@
+.top_line,
+.bottom_line,
+.mid-line {
+  transform-box: fill-box;
+  transform-origin: center;
+  fill: green;
+}
+
+/* Claramente tem como ajeitar isso, ajeite dps */
+.top_line {
+  animation: down-rotate-reverse 0.4s ease-out both;
+}
+
+.bottom_line {
+  animation: up-rotate-reverse 0.4s ease-out both;
+}
+
+.mid_line {
+  animation: hide-reverse 0.4s ease-out forwards;
+}
+
+.retract .top_line {
+  animation: down-rotate 0.6s ease-out both;
+}
+.retract .bottom_line {
+  animation: up-rotate 0.6s ease-out both;
+}
+.retract .mid_line {
+  animation: hide 0.6s ease-out forwards;
+}
+
+
+@keyframes up-rotate {
+  0% {
+    animation-timing-function: cubic-bezier(0.16, -0.88, 0.97, 0.53);
+    transform: translateY(0px);
+  }
+  30% {
+    transform-origin: center;
+    animation-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);
+    transform: translateY(-10px);
+  }
+  100% {
+    transform-origin: center;
+    transform: translateY(-10px) rotate(45deg) scale(0.9);
+  }
+}
+
+@keyframes up-rotate-reverse {
+  0% {
+    transform-origin: center;
+    transform: translateY(-10px) rotate(45deg) scale(0.9);
+  }
+
+  30% {
+    transform-origin: center;
+    animation-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);
+    transform: translateY(-10px);
+  }
+
+  100% {
+    animation-timing-function: cubic-bezier(0.16, -0.88, 0.97, 0.53);
+    transform: translateY(0px);
+  }
+}
+
+@keyframes down-rotate {
+  0% {
+    animation-timing-function: cubic-bezier(0.16, -0.88, 0.97, 0.53);
+    transform: translateY(0px);
+  }
+  30% {
+    transform-origin: center;
+    animation-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);
+    transform: translateY(10px);
+  }
+  100% {
+    transform-origin: center;
+    transform: translateY(10px) rotate(-45deg) scale(0.9);
+  }
+}
+
+@keyframes down-rotate-reverse {
+  0% {
+    transform-origin: center;
+    transform: translateY(10px) rotate(-45deg) scale(0.9);
+  }
+  30% {
+    transform-origin: center;
+    animation-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);
+    transform: translateY(10px);
+  }
+  100% {
+    animation-timing-function: cubic-bezier(0.16, -0.88, 0.97, 0.53);
+    transform: translateY(0px);
+  }
+}
+
+@keyframes hide {
+  29% {
+    opacity: 1;
+  }
+  30% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes hide-reverse {
+  29% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

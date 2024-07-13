@@ -84,6 +84,8 @@ export function getGraph(weeks: any, config: any) {
           style="font-family: 'Nunito'"
           fill="white" 
           stroke="black"
+          font-color="white"
+          font-weight="bold"
           font-size="25"
           >THIS USER DOES NOT EXIST
          </text>
@@ -96,6 +98,7 @@ export function getGraph(weeks: any, config: any) {
           style="font-family: 'Nunito'"
           fill="white"
           stroke="black"
+          font-weight="semibold"
           font-size="15"
           > Check for correct spelling
          </text>

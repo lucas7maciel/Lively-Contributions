@@ -2,7 +2,7 @@
 
 This is a new version of my old NestJS project. Now made in NextJS, Lively Contributions generate the graphs on Server Side, making possible to use the generated SVG's in your Github profile or personal websites
 
-# Stylying
+# Styling
 ## Animations
 ### Pacman
 ![Pacman graph](https://lively-contributions-blush.vercel.app/lucas7maciel/pacman?bg=dark&color=dark)
@@ -35,7 +35,8 @@ Choose the color pallete of contribution squares
 ![Light background graph](https://lively-contributions-blush.vercel.app/lucas7maciel/scale?bg=light&color=light)
 ### Any custom color (808080, purple)
 ![#808080 background graph](https://lively-contributions-blush.vercel.app/lucas7maciel/scale?bg=808080&color=dark)
-![Purple background graph](https://lively-contributions-blush.vercel.app/lucas7maciel/scale?bg=purple&color=dark)
+
+![Purple background graph](https://lively-contributions-blush.vercel.app/lucas7maciel/scale?bg=A020F0&color=dark)
 
 ### Other props
 - Delay: number;
