@@ -114,7 +114,7 @@ export function PopUp(props: PopUpProps) {
       <div
         className={`relative flex items-center gap-3 rounded-lg cursor-pointer ${
           props.reverse ? "flex-row-reverse" : ""
-        } ${!props.transparent ? "bg-gray-200 hover:bg-gray-300 transition duration-300 border" : ""} ${
+        } ${!props.transparent ? "bg-gray-100 hover:bg-gray-200 transition duration-300 shadow-sm" : ""} ${
           !props.noPaddingModal ? "px-4 py-2" : ""
         }`}
       >

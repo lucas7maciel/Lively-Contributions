@@ -4,8 +4,8 @@ interface IconProps {
 
 export function Icon(props: IconProps) {
   return (
-    <div className="text-center w-[3.5ch]">
-      <p className="font-bold text-gray-800">{props.delay}s</p>
+    <div className="flex items-center align-center text-center h-[2rem] w-[3.5ch]">
+      <p className="font-bold text-gray-800 text-lg">{props.delay}s</p>
     </div>
   );
 }

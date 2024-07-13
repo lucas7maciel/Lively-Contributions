@@ -62,7 +62,9 @@ export default function Maker() {
           />
         </Link>
 
-        <h1 className="flex-1 font-bold text-2xl leading-[40px] text-gray-900">Maker</h1>
+        <h1 className="flex-1 font-bold text-2xl leading-[40px] text-gray-900">
+          Maker
+        </h1>
 
         <Link href="/docs">
           <Image
@@ -70,8 +72,8 @@ export default function Maker() {
             src={InfoIcon}
             width={40}
             height={40}
-            alt="How it works"
-            title="How it works"
+            alt="Docs"
+            title="Docs"
           />
         </Link>
       </header>
@@ -106,7 +108,7 @@ export default function Maker() {
 
       {/* Props */}
       <div>
-        <div className="flex flex-wrap gap-6 justify-center px-8">
+        <div className="flex flex-wrap items-stretch justify-center gap-6 px-8">
           <PopUp
             title="Color"
             icon={<ColorIcon color={color} />}
@@ -139,10 +141,7 @@ export default function Maker() {
           className="flex gap-3 items-center p-2 border rounded-lg bg-white hover:bg-gray-100 transition duration-1000"
           onClick={() => copyLink()}
         >
-          <p
-            className="text-gray-700 hover:text-gray-600 flex-1 truncate"
-            title={link}
-          >
+          <p className="text-gray-500 hover:text-gray-600 flex-1 truncate select-none">
             {link}
           </p>
           <Image

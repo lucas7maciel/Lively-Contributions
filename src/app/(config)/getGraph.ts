@@ -72,10 +72,6 @@ export function getGraph(weeks: any, config: any) {
         ${
           weeks.length ||
           `
-          <defs>
-            <style type="text/css">@import url('https://fonts.googleapis.com/css?family=Nunito');</style>
-          </defs>
-
          <text 
           x="50%" y="45%" 
           text-anchor="middle"
