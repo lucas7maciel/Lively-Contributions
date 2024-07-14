@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@tailwindui/react": "^0.1.1",
     "next": "14.2.3",
     "react": "^18",
     "react-colorful": "^5.6.1",

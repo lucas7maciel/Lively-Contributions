@@ -36,8 +36,8 @@ export function Dashboard(props: DashboardProps) {
 
   return (
     <div
-      className={`fixed top-0 left-0 border-r shadow-lg ${
-        !props.open ? "left-[-255px]" : ""
+      className={`fixed top-0 border-r shadow-lg ${
+        !props.open ? "left-[-255px]" : "left-0"
       } lg:left-0 transition-[left] w-[250px] max-w-full h-full flex flex-col items-strech gap-1 p-6 pt-[6rem] flex-1 bg-gray-50 overflow-y-auto`}
       ref={modal}
     >

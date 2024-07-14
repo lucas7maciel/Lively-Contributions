@@ -2,9 +2,9 @@
 // Types
 import { AnimationsValue } from "@/models/animations.model";
 // Components
+import { Header } from "./header";
 import { useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
 // Selectors
 import { PopUp } from "@/components/popup";
 import {
@@ -21,9 +21,7 @@ import {
 } from "@/components/animSelector";
 import { Icon as BgIcon, Content as BgContent } from "@/components/bgSelector";
 // Icons
-import NavigateBackIcon from "/public/logo.svg";
 import CopyIcon from "/public/icons/copy.svg";
-import InfoIcon from "/public/icons/info.svg";
 import { useMessage } from "@/hooks/useMessage";
 
 export default function Maker() {
@@ -49,34 +47,7 @@ export default function Maker() {
 
   return (
     <div className="min-h-screen w-full pb-8 flex flex-col gap-5 items-center justify-between text-center bg-gray-50">
-      {/* Header */}
-      <header className="w-full flex items-center justify-between gap-4 text-center p-4 pb-2">
-        <Link href="/">
-          <Image
-            className="cursor-pointer hover:opacity-70 hover:scale-125 transition duration-200 grayscale"
-            src={NavigateBackIcon}
-            width={40}
-            height={40}
-            alt="Home"
-            title="Home"
-          />
-        </Link>
-
-        <h1 className="flex-1 font-bold text-2xl leading-[40px] text-gray-900">
-          Maker
-        </h1>
-
-        <Link href="/docs">
-          <Image
-            className="cursor-pointer hover:opacity-70 hover:scale-125 transition duration-200"
-            src={InfoIcon}
-            width={40}
-            height={40}
-            alt="Docs"
-            title="Docs"
-          />
-        </Link>
-      </header>
+      <Header />
 
       {/* Set properties */}
       <div className="flex flex-col items-center justify-center">

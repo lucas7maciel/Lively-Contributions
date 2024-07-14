@@ -2,7 +2,7 @@ export default function AboutUs() {
   return (
     <section id="aboutUs" className="py-3">
       <h3 className="font-bold text-gray-800 text-3xl mb-1">
-        What is Lively Contributions?
+        About Us
       </h3>
 
       <p className="font-semibold text-gray-700">
